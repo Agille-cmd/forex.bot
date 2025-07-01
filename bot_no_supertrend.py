@@ -287,7 +287,7 @@ def calculate_indicators(df: pd.DataFrame, user_id: int) -> Optional[Dict[str, A
         high = df['high'].values
         low = df['low'].values
         
-        min_period = max(settings['RSI_PERIOD'], settings['MACD_SLOW'], 
+        min_period = max(settings['RSI_PERIOD'], settings['MACD_SLOW'])
                          settings['BB_PERIOD'], settings['STOCH_K'], settings['ADX_PERIOD'],
         if len(close) < min_period:
             raise ValueError(f"Недостаточно данных для расчета. Требуется минимум {min_period} точек.")

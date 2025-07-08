@@ -1,14 +1,14 @@
 import os
 from dotenv import load_dotenv
-from typing import Dict, List
 
 load_dotenv()
 
-# Основные настройки
-TOKEN = os.getenv('TELEGRAM_TOKEN')
-TWELVE_DATA_KEY = os.getenv('TWELVE_DATA_API_KEY')
-BOT_ID = None
-ALLOWED_USER_IDS = {7785586524, 7064593003}
+class BotConfig:
+    def __init__(self):
+        self.TOKEN = os.getenv('TELEGRAM_TOKEN')  # Используйте имя переменной из .env
+        self.TWELVE_DATA_KEY = os.getenv('TWELVE_DATA_API_KEY')
+        self.BOT_ID = None
+        self.ALLOWED_USER_IDS = {7785586524, 7064593003}
 
 # Константы дизайна
 COLORS = {
@@ -68,3 +68,5 @@ CANDLE_PATTERNS = {
     'bearish_engulfing': lambda o1, h1, l1, c1, o2, h2, l2, c2: (c1 > o1) and (c2 < o2) and (c2 < o1) and (o2 > c1),
     'morning_star': lambda o1, h1, l1, c1, o2, h2, l2, c2, o3, h3, l3, c3: (c1 < o1) and (abs(c2-o2) < (h2-l2)*0.3) and (c3 > o3) and (c3 > ((o1 + c1)/2))
 }
+
+config = BotConfig()

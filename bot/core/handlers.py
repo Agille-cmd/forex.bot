@@ -9,10 +9,8 @@ import pandas as pd
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ChatAction
 from telegram.ext import CallbackContext, CommandHandler, CallbackQueryHandler, MessageHandler, Filters
 
-from bot.config import config (
-    TOKEN, ALLOWED_USER_IDS, DEFAULT_SETTINGS, CURRENCY_GROUPS, 
-    TIMEFRAMES, MULTI_TIMEFRAMES, COLORS
-)
+from bot.config import config.TOKEN, config.ALLOWED_USER_IDS, config.DEFAULT_SETTINGS, config.CURRENCY_GROUPS, config.TIMEFRAMES,
+    config.MULTI_TIMEFRAMES, config.COLORS
 from bot.services.technical import TechnicalAnalyzer
 from bot.services.data_fetcher import get_ohlc_data, generate_test_data
 from bot.utils.plotter import create_candlestick_plot, create_enhanced_plot

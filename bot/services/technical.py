@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from typing import Dict, Any, Optional, Tuple
 from datetime import datetime
-from bot.config import CANDLE_PATTERNS, DEFAULT_SETTINGS
+from bot.config import config.CANDLE_PATTERNS, config.DEFAULT_SETTINGS
 
 class TechnicalAnalyzer:
     def __init__(self):

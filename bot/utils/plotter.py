@@ -5,7 +5,7 @@ import mplfinance as mpf
 import numpy as np
 import pandas as pd
 from typing import Dict, Any, Optional
-from bot.config import COLORS
+from bot.config import config.COLORS
 
 matplotlib.use('Agg')
 

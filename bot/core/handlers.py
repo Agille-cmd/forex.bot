@@ -2,7 +2,7 @@ import logging
 import time
 import traceback
 from datetime import datetime
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 
 import numpy as np
 import pandas as pd

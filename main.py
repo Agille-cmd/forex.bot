@@ -1,34 +1,28 @@
 #!/usr/bin/env python3
-"""
-Главный исполняемый файл бота
-"""
-
-import asyncio
-import logging
-from telegram.ext import Application
+from telegram.ext import Updater
 from bot import tech_analyzer, user_data, user_messages
 from bot.core import setup_handlers
 from bot.config import config
+import logging
 
-async def main():
+def main():
     """Основная функция запуска бота"""
     try:
         # Инициализация приложения
-        application = Application.builder().token(config.TOKEN).build()
+        updater = Updater(config.TOKEN, use_context=True)
         
         # Настройка обработчиков
-        setup_handlers(application)
+        setup_handlers(updater.dispatcher)
         
         # Сохраняем ID бота
-        config.BOT_ID = (await application.bot.get_me()).id
+        config.BOT_ID = updater.bot.id
         
         logging.info("Бот успешно запущен. Ожидание сообщений...")
-        await application.run_polling()
+        updater.start_polling()
+        updater.idle()
         
     except Exception as e:
         logging.critical(f"Критическая ошибка: {str(e)}")
-    finally:
-        logging.info("Бот остановлен")
 
 if __name__ == '__main__':
-    asyncio.run(main())
+    main()

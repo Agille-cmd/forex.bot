@@ -4,7 +4,7 @@ from typing import Dict, Any, Optional, List
 from telegram import InlineKeyboardMarkup
 from telegram.ext import CallbackContext
 from telegram.error import TelegramError
-from bot.config import ALLOWED_USER_IDS, DEFAULT_SETTINGS
+from bot.config import config.ALLOWED_USER_IDS, config.DEFAULT_SETTINGS
 
 def setup_logging():
     """Настройка логирования для всего приложения."""

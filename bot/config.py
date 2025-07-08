@@ -8,10 +8,10 @@ class BotConfig:
     """Класс конфигурации бота"""
     
     # Основные настройки
-    TOKEN = os.getenv('TELEGRAM_TOKEN')
-    TWELVE_DATA_KEY = os.getenv('TWELVE_DATA_API_KEY')
+    TOKEN = os.getenv('7844378262:AAHmBSGea0znCCks3hsxpixCjEYeczwalsA')
+    TWELVE_DATA_KEY = os.getenv('80caddf1ddcd4f1b983d21d31c8bc180')
     BOT_ID = None
-    ALLOWED_USER_IDS = {7785586524, 7064593003}  # Замените на реальные ID
+    ALLOWED_USER_IDS = {7785586524, 7064593003}
     
     # Константы дизайна
     COLORS = {

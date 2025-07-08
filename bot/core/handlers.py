@@ -9,7 +9,7 @@ import pandas as pd
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ChatAction
 from telegram.ext import CallbackContext, CommandHandler, CallbackQueryHandler, MessageHandler, Filters
 
-from bot.config import (
+from bot.config import config (
     TOKEN, ALLOWED_USER_IDS, DEFAULT_SETTINGS, CURRENCY_GROUPS, 
     TIMEFRAMES, MULTI_TIMEFRAMES, COLORS
 )

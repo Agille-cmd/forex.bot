@@ -1,4 +1,4 @@
-from bot.config import config  # Импортируем объект config
+from bot.config import config
 from bot import tech_analyzer, user_data, user_messages
 from bot.core import setup_handlers
 from telegram.ext import Updater
@@ -6,7 +6,7 @@ import logging
 
 def main():
     try:
-        updater = Updater(config.TOKEN, use_context=True)  # Используем config.TOKEN
+        updater = Updater(config.TOKEN, use_context=True)
         setup_handlers(updater.dispatcher)
         
         logging.info("Бот запущен. Ожидание сообщений...")
